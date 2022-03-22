@@ -27,14 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngSubmit() {
-    alert("hjhgjhgjhgj")
     this.loginForm = new LoginForm(
       this.form.userName,
       this.form.password
     )
     console.log(this.loginForm)
     this.subscription = this.authService.login(this.loginForm).subscribe(data => {
-      console.log(data)
       if (data.token != undefined) {
         this.tokenService.setToken(data.token);
         this.tokenService.setName(data.name);
