@@ -25,6 +25,7 @@ import {httpInterceptorProvider} from "./security/auth.interceptor";
 import {HttpClientModule} from "@angular/common/http";
 import { CustomerHomePageComponent } from './component/customer/customer-home-page/customer-home-page.component';
 import { CustomerShopComponent } from './component/customer/customer-shop/customer-shop.component';
+import { CustomerProductDetailComponent } from './component/customer/customer-product-detail/customer-product-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CustomerShopComponent } from './component/customer/customer-shop/custom
     LoginComponent,
     HomeComponent,
     CustomerHomePageComponent,
-    CustomerShopComponent
+    CustomerShopComponent,
+    CustomerProductDetailComponent
   ],
   imports: [
     BrowserModule,
