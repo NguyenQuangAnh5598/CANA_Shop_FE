@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../../service/product.service";
 import {Product} from "../../../model/Product";
 import {ActivatedRoute, Params} from "@angular/router";
+import {OrderDetail} from "../../../model/OrderDetail";
+import {Order} from "../../../model/Order";
+import {User} from "../../../model/User";
+import {OrderDetailService} from "../../../service/order-detail.service";
+import {TokenService} from "../../../service/token.service";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-customer-product-detail',
@@ -9,19 +15,34 @@ import {ActivatedRoute, Params} from "@angular/router";
   styleUrls: ['./customer-product-detail.component.scss']
 })
 export class CustomerProductDetailComponent implements OnInit {
+  // @ts-ignore
+  orderDetail: OrderDetail = {
+  }
+
+  productId: number = 2;
+  orderQuantity: number = 1;
 // @ts-ignore
   product: Product = {}
-  productId: number = 6;
+
   constructor(private productService: ProductService,
-              private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe((params: Params) => {
+              private activatedRoute: ActivatedRoute,
+              private orderDetailService: OrderDetailService,
+              private tokenStorage: TokenService,
+              private userService: UserService) {
+    this.activatedRoute.params.subscribe((params:Params) => {
       // this.productId = params['id'];
-      this.productService.findById(this.productId).subscribe(product => {
-        this.product = product;
       })
-    })
   }
   ngOnInit(): void {
   }
 
+   createOrderDetail() {
+    // @ts-ignore
+    this.orderDetail = {
+      orderQuantity: this.orderQuantity,
+      productId: this.productId,
+    }
+    console.log(this.orderDetail)
+    this.orderDetailService.createNewOrderDetail(this.orderDetail).subscribe();
+  }
 }
