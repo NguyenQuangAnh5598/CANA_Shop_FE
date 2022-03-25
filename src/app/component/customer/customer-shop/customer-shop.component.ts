@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductService} from "../../../service/product.service";
 import {Product} from "../../../model/Product";
 
@@ -8,17 +8,18 @@ import {Product} from "../../../model/Product";
   styleUrls: ['./customer-shop.component.scss']
 })
 export class CustomerShopComponent implements OnInit {
+  @Input()
   productList: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.showAllProduct();
+    // this.showAllProduct();
   }
 
-  private showAllProduct(): void {
-    this.productService.findAll().subscribe( productList => {
-      this.productList = productList;
-    });
-  }
+  // private showAllProduct(): void {
+  //   this.productService.findAll().subscribe( productList => {
+  //     this.productList = productList;
+  //   });
+  // }
 }

@@ -26,7 +26,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { CustomerHomePageComponent } from './component/customer/customer-home-page/customer-home-page.component';
 import { CustomerShopComponent } from './component/customer/customer-shop/customer-shop.component';
 import { CustomerProductDetailComponent } from './component/customer/customer-product-detail/customer-product-detail.component';
-import { CustomerAddProductComponent } from './component/customer/customer-add-product/customer-add-product.component';
+import { CustomerPaymentComponent } from './component/customer/customer-payment/customer-payment.component';
+import { CustomerProductComponent } from './component/customer/customer-product/customer-product.component';
+import { CustomerOrderDetailComponent } from './component/customer/customer-order-detail/customer-order-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { CustomerAddProductComponent } from './component/customer/customer-add-p
     CustomerHomePageComponent,
     CustomerShopComponent,
     CustomerProductDetailComponent,
-    CustomerAddProductComponent
+    CustomerPaymentComponent,
+    CustomerProductComponent,
+    CustomerOrderDetailComponent
   ],
   imports: [
     BrowserModule,
