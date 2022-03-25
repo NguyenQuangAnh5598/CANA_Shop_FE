@@ -26,7 +26,12 @@ import {HttpClientModule} from "@angular/common/http";
 import { CustomerHomePageComponent } from './component/customer/customer-home-page/customer-home-page.component';
 import { CustomerShopComponent } from './component/customer/customer-shop/customer-shop.component';
 import { CustomerProductDetailComponent } from './component/customer/customer-product-detail/customer-product-detail.component';
-import { CustomerAddProductComponent } from './component/customer/customer-add-product/customer-add-product.component';
+import { AdminListProductComponent } from './component/admin/admin-list-product/admin-list-product.component';
+import { AdminListUserComponent } from './component/admin/admin-list-user/admin-list-user.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +48,9 @@ import { CustomerAddProductComponent } from './component/customer/customer-add-p
     CustomerHomePageComponent,
     CustomerShopComponent,
     CustomerProductDetailComponent,
-    CustomerAddProductComponent
+    AdminListProductComponent,
+    AdminListUserComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,10 @@ import { CustomerAddProductComponent } from './component/customer/customer-add-p
     FormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),  ],
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatTableModule,
+    MatPaginatorModule,
+  ],
   providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })
