@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../../service/auth.service";
 import {TokenService} from "../../../service/token.service";
 import {Subscription} from "rxjs";
+import {OrderService} from "../../../service/order.service";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-login',
@@ -50,7 +52,7 @@ export class LoginComponent implements OnInit {
           })
         }
       } else {
-        alert( "Your account has been error")
+        alert("Your account has been error")
       }
     })
   }

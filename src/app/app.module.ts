@@ -26,6 +26,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { CustomerHomePageComponent } from './component/customer/customer-home-page/customer-home-page.component';
 import { CustomerShopComponent } from './component/customer/customer-shop/customer-shop.component';
 import { CustomerProductDetailComponent } from './component/customer/customer-product-detail/customer-product-detail.component';
+import { CustomerPaymentComponent } from './component/customer/customer-payment/customer-payment.component';
+import { CustomerProductComponent } from './component/customer/customer-product/customer-product.component';
+import { CustomerOrderDetailComponent } from './component/customer/customer-order-detail/customer-order-detail.component';
 import { AdminListProductComponent } from './component/admin/admin-list-product/admin-list-product.component';
 import { AdminListUserComponent } from './component/admin/admin-list-user/admin-list-user.component';
 import {MatTableModule} from "@angular/material/table";
@@ -48,6 +51,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     CustomerHomePageComponent,
     CustomerShopComponent,
     CustomerProductDetailComponent,
+    CustomerPaymentComponent,
+    CustomerProductComponent,
+    CustomerOrderDetailComponent,
     AdminListProductComponent,
     AdminListUserComponent,
 

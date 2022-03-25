@@ -16,4 +16,12 @@ export class OrderDetailService {
 createNewOrderDetail(orderDetail: OrderDetail): Observable<OrderDetail> {
   return this.http.post<OrderDetail>(API_LOCAL + 'orderdetail', orderDetail);
 }
+
+  updateOrderDetail(orderDetail: OrderDetail): Observable<OrderDetail> {
+    return this.http.put<OrderDetail>(API_LOCAL + 'orderdetail',orderDetail)
+  }
+
+  findById(id: number): Observable<OrderDetail> {
+    return this.http.get<OrderDetail>(API_LOCAL + 'orderdetail/' + id)
+  }
 }
