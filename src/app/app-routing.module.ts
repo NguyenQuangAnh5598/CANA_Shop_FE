@@ -8,6 +8,8 @@ import {SignupComponent} from "./component/user/signup/signup.component";
 import {HomeComponent} from "./component/home/home.component";
 import {AuthGuard} from "./security/auth.guard";
 import {CustomerProductDetailComponent} from "./component/customer/customer-product-detail/customer-product-detail.component";
+import {AdminListProductComponent} from "./component/admin/admin-list-product/admin-list-product.component";
+import {AdminListUserComponent} from "./component/admin/admin-list-user/admin-list-user.component";
 
 const routes: Routes = [
   {
@@ -24,7 +26,10 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'product-create', component: ProductCreateComponent},
   {path: 'product-edit', component: ProductEditComponent},
+  {path: 'admin-list-product', component: AdminListProductComponent},
+  {path: 'admin-list-user', component: AdminListUserComponent},
   {path:'customer-product-detail', component: CustomerProductDetailComponent}
+
 ];
 
 @NgModule({

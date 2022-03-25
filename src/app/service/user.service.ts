@@ -3,6 +3,7 @@ import {environment} from "../../environments/environment.prod";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {User} from "../model/User";
+import {Product} from "../model/Product";
 
 const API_LOCAL = `${environment.API_LOCAL}`;
 
@@ -15,6 +16,9 @@ export class UserService {
 
   getUserById(id: number): Observable<User> {
     return this.http.get<User>(API_LOCAL +'user/'+id);
+  }
+  findAll(): Observable<User[]> {
+    return this.http.get<User[]>(API_LOCAL + 'user');
   }
 
 }
