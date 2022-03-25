@@ -29,6 +29,12 @@ import { CustomerProductDetailComponent } from './component/customer/customer-pr
 import { CustomerPaymentComponent } from './component/customer/customer-payment/customer-payment.component';
 import { CustomerProductComponent } from './component/customer/customer-product/customer-product.component';
 import { CustomerOrderDetailComponent } from './component/customer/customer-order-detail/customer-order-detail.component';
+import { AdminListProductComponent } from './component/admin/admin-list-product/admin-list-product.component';
+import { AdminListUserComponent } from './component/admin/admin-list-user/admin-list-user.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +53,10 @@ import { CustomerOrderDetailComponent } from './component/customer/customer-orde
     CustomerProductDetailComponent,
     CustomerPaymentComponent,
     CustomerProductComponent,
-    CustomerOrderDetailComponent
+    CustomerOrderDetailComponent,
+    AdminListProductComponent,
+    AdminListUserComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,10 @@ import { CustomerOrderDetailComponent } from './component/customer/customer-orde
     FormsModule,
     HttpClientModule,
     MatFormFieldModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),  ],
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatTableModule,
+    MatPaginatorModule,
+  ],
   providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })

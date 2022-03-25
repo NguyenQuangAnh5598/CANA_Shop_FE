@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from "../../environments/environment.prod";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
@@ -12,12 +12,18 @@ const API_LOCAL = `${environment.API_LOCAL}`;
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getUserById(id: number): Observable<User> {
-    return this.http.get<User>(API_LOCAL +'user/'+id);
+    return this.http.get<User>(API_LOCAL + 'user/' + id);
   }
-findCurrentOrder(id: number): Observable<Order>{
-  return this.http.get<Order>(API_LOCAL +'user/findCurrentOrder/'+ id);
-}
+
+  findCurrentOrder(id: number): Observable<Order> {
+    return this.http.get<Order>(API_LOCAL + 'user/findCurrentOrder/' + id);
+  }
+
+  findAll(): Observable<User[]> {
+    return this.http.get<User[]>(API_LOCAL + 'user');
+  }
 }
