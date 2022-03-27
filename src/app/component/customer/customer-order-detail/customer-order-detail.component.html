@@ -7,7 +7,7 @@
         <i class="fa fa-minus"></i>
       </button>
     </div>
-    <input type="text" class="form-control form-control-sm bg-secondary text-center" [(ngModel)]="orderDetail.orderQuantity">
+    <input (change)="update()" type="text" class="form-control form-control-sm bg-secondary text-center" [(ngModel)]="orderDetail.orderQuantity">
     <div class="input-group-btn">
       <button class="btn btn-sm btn-primary btn-plus">
         <i class="fa fa-plus"></i>
@@ -15,5 +15,5 @@
     </div>
   </div>
 </td>
-<td class="align-middle"><button (click)="update()">save</button></td>
+<td class="align-middle">>save</td>
 <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>

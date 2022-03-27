@@ -32,6 +32,7 @@ export class CustomerPaymentComponent implements OnInit {
       // @ts-ignore
       this.orderService.findAllByOrder(order.id).subscribe(orderDetailList =>
         this.orderDetailList = orderDetailList)
+      console.log(this.orderDetailList)
     });
   }
 
