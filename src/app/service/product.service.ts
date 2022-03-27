@@ -30,4 +30,8 @@ export class ProductService {
   deleteProduct(id: number) {
     return this.http.delete(API_LOCAL + 'product/' + id);
   }
+
+  showAllProductByPage(pageNum: string): Observable<any> {
+    return this.http.get<any>(API_LOCAL + 'product/page' + pageNum)
+  }
 }

@@ -8,18 +8,25 @@ import {Product} from "../../../model/Product";
   styleUrls: ['./customer-shop.component.scss']
 })
 export class CustomerShopComponent implements OnInit {
-  @Input()
   productList: Product[] = [];
 
-  constructor() { }
+  pageNum: string = '';
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     // this.showAllProduct();
+    this.showAllProductByPage(this.pageNum);
   }
 
-  // private showAllProduct(): void {
-  //   this.productService.findAll().subscribe( productList => {
-  //     this.productList = productList;
-  //   });
-  // }
+   showAllProduct(): void {
+    this.productService.findAll().subscribe( productList => {
+      this.productList = productList;
+    });
+  }
+
+  showAllProductByPage(pageNum: string): void {
+    this.productService.showAllProductByPage(pageNum).subscribe( productList => {
+      this.productList = productList.content
+    })
+  }
 }
