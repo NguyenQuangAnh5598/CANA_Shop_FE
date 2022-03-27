@@ -21,6 +21,15 @@ export class OrderService {
   }
 
   payment(id: number | undefined): Observable<Order> {
-    return this.http.get<Order>(API_LOCAL + 'order/payment/'+ id);
+    return this.http.put<Order>(API_LOCAL + 'order/payment/'+ id, id);
+  }
+
+  checkOrder(id: number | undefined): Observable<any> {
+    // @ts-ignore
+    return this.http.put<any>(API_LOCAL + 'order/acceptOrder/'+ id)
+  }
+
+  findAllOrderByStatusId(id: number): Observable<Order[]> {
+    return this.http.get<Order[]>(API_LOCAL + 'order/findAllOrderByStatusId/' + id);
   }
 }

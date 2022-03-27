@@ -33,6 +33,8 @@ import { AdminListProductComponent } from './component/admin/admin-list-product/
 import { AdminListUserComponent } from './component/admin/admin-list-user/admin-list-user.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { AdminCheckOrderComponent } from './component/admin/admin-check-order/admin-check-order.component';
+import { AdminCheckCompletedOrderComponent } from './component/admin/admin-check-completed-order/admin-check-completed-order.component';
 
 
 
@@ -56,6 +58,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     CustomerOrderDetailComponent,
     AdminListProductComponent,
     AdminListUserComponent,
+    AdminCheckOrderComponent,
+    AdminCheckCompletedOrderComponent,
 
   ],
   imports: [

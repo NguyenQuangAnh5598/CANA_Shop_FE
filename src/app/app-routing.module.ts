@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ProductListComponent} from "./component/product/product-list/product-list.component";
 import {ProductCreateComponent} from "./component/product/product-create/product-create.component";
 import {ProductEditComponent} from "./component/product/product-edit/product-edit.component";
 import {LoginComponent} from "./component/user/login/login.component";
@@ -12,6 +11,7 @@ import {CustomerPaymentComponent} from "./component/customer/customer-payment/cu
 import {CustomerShopComponent} from "./component/customer/customer-shop/customer-shop.component";
 import {AdminListProductComponent} from "./component/admin/admin-list-product/admin-list-product.component";
 import {AdminListUserComponent} from "./component/admin/admin-list-user/admin-list-user.component";
+import {CustomerHomePageComponent} from "./component/customer/customer-home-page/customer-home-page.component";
 
 const routes: Routes = [
   {
@@ -19,20 +19,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {path: 'home',canActivate: [AuthGuard] , component: HomeComponent,
+  {path: 'home', component: HomeComponent,
   children:[
-    {path: 'product-list', component: ProductListComponent},
+    {path:'',component: CustomerHomePageComponent},
+    {path: 'customer-payment',canActivate: [AuthGuard] , component: CustomerPaymentComponent},
     {path: 'customer-shop', component: CustomerShopComponent},
+    {path:'customer-product-detail/:id', component: CustomerProductDetailComponent},
   ]},
+
+
+
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'product-create', component: ProductCreateComponent},
   {path: 'product-edit', component: ProductEditComponent},
-  {path:'customer-product-detail', component: CustomerProductDetailComponent},
-  {path: 'customer-payment', component: CustomerPaymentComponent},
   {path: 'admin-list-product', component: AdminListProductComponent},
   {path: 'admin-list-user', component: AdminListUserComponent},
-  {path:'customer-product-detail', component: CustomerProductDetailComponent}
 
 ];
 
