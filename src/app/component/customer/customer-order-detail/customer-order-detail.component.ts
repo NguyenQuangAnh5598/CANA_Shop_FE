@@ -16,8 +16,8 @@ export class CustomerOrderDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.orderDetail)
-    // console.log(this.orderDetail.product)
+    console.log(this.orderDetail)
+    console.log(this.orderDetail.product)
   }
   update(): void {
     this.orderDetailChange.emit(this.orderDetail);

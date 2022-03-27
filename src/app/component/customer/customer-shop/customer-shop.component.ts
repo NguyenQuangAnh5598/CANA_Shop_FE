@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ProductService} from "../../../service/product.service";
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../../model/Product";
+import {ProductService} from "../../../service/product.service";
 
 @Component({
   selector: 'app-customer-shop',
@@ -9,13 +9,14 @@ import {Product} from "../../../model/Product";
 })
 export class CustomerShopComponent implements OnInit {
   productList: Product[] = [];
+page: any;
 
-  pageNum: string = '';
+  count: any;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     // this.showAllProduct();
-    this.showAllProductByPage(this.pageNum);
+    this.showAllProductByPage2()
   }
 
    showAllProduct(): void {
@@ -25,8 +26,24 @@ export class CustomerShopComponent implements OnInit {
   }
 
   showAllProductByPage(pageNum: string): void {
-    this.productService.showAllProductByPage(pageNum).subscribe( productList => {
-      this.productList = productList.content
+    this.productService.showAllProductByPage(pageNum).subscribe( data => {
+      this.productList = data.content
+      this.page = data
+      this.count = parseInt(String(data.number / 3))*3
+    })
+  }
+
+  showAllProductByPage2(s?: any) {
+    let pageNum;
+    if (s != null) {
+      pageNum = '?page=' + s;
+    }else {
+      pageNum = '';
+    }
+    this.productService.showAllProductByPage(pageNum).subscribe( data => {
+      this.productList = data.content
+      this.page = data
+      this.count = parseInt(String(data.number / 3))*3
     })
   }
 }

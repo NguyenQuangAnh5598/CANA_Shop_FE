@@ -26,11 +26,11 @@ export class CustomerProductDetailComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
-              private orderDetailService: OrderDetailService,
-              private tokenStorage: TokenService,
-              private userService: UserService) {
+              private orderDetailService: OrderDetailService) {
     this.activatedRoute.params.subscribe((params:Params) => {
-      // this.productId = params['id'];
+      this.productId = params['id'];
+      productService.findById(this.productId).subscribe(data =>
+      this.product = data)
       })
   }
   ngOnInit(): void {
@@ -44,5 +44,6 @@ export class CustomerProductDetailComponent implements OnInit {
     }
     console.log(this.orderDetail)
     this.orderDetailService.createNewOrderDetail(this.orderDetail).subscribe();
+    alert("Thêm vào rỏ hàng thành công")
   }
 }
