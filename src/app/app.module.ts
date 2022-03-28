@@ -29,12 +29,15 @@ import { CustomerProductDetailComponent } from './component/customer/customer-pr
 import { CustomerPaymentComponent } from './component/customer/customer-payment/customer-payment.component';
 import { CustomerProductComponent } from './component/customer/customer-product/customer-product.component';
 import { CustomerOrderDetailComponent } from './component/customer/customer-order-detail/customer-order-detail.component';
-import { AdminListProductComponent } from './component/admin/admin-list-product/admin-list-product.component';
-import { AdminListUserComponent } from './component/admin/admin-list-user/admin-list-user.component';
+
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { AdminCheckOrderComponent } from './component/admin/admin-check-order/admin-check-order.component';
 import { AdminCheckCompletedOrderComponent } from './component/admin/admin-check-completed-order/admin-check-completed-order.component';
+import { AdminUpdateUserComponent } from './component/admin/admin-update-user/admin-update-user.component';
+import {AdminListProductComponent} from "./component/admin/admin-list-product/admin-list-product.component";
+import {AdminListUserComponent} from "./component/admin/admin-list-user/admin-list-user.component";
+import { CustomerProfileComponent } from './component/customer/customer-profile/customer-profile.component';
 
 
 
@@ -60,6 +63,8 @@ import { AdminCheckCompletedOrderComponent } from './component/admin/admin-check
     AdminListUserComponent,
     AdminCheckOrderComponent,
     AdminCheckCompletedOrderComponent,
+    AdminUpdateUserComponent,
+    CustomerProfileComponent,
 
   ],
   imports: [

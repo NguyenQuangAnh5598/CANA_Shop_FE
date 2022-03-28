@@ -9,9 +9,11 @@ import {AuthGuard} from "./security/auth.guard";
 import {CustomerProductDetailComponent} from "./component/customer/customer-product-detail/customer-product-detail.component";
 import {CustomerPaymentComponent} from "./component/customer/customer-payment/customer-payment.component";
 import {CustomerShopComponent} from "./component/customer/customer-shop/customer-shop.component";
+import {CustomerHomePageComponent} from "./component/customer/customer-home-page/customer-home-page.component";
 import {AdminListProductComponent} from "./component/admin/admin-list-product/admin-list-product.component";
 import {AdminListUserComponent} from "./component/admin/admin-list-user/admin-list-user.component";
-import {CustomerHomePageComponent} from "./component/customer/customer-home-page/customer-home-page.component";
+import {AdminUpdateUserComponent} from "./component/admin/admin-update-user/admin-update-user.component";
+import {CustomerProfileComponent} from "./component/customer/customer-profile/customer-profile.component";
 
 const routes: Routes = [
   {
@@ -35,7 +37,8 @@ const routes: Routes = [
   {path: 'product-edit', component: ProductEditComponent},
   {path: 'admin-list-product', component: AdminListProductComponent},
   {path: 'admin-list-user', component: AdminListUserComponent},
-
+  {path: 'admin-update-user/:id', component: AdminUpdateUserComponent},
+  {path: 'customer-profile/:id', component: CustomerProfileComponent},
 ];
 
 @NgModule({
