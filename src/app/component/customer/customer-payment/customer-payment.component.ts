@@ -5,6 +5,7 @@ import {OrderService} from "../../../service/order.service";
 import {UserService} from "../../../service/user.service";
 import {OrderDetail} from "../../../model/OrderDetail";
 import {OrderDetailService} from "../../../service/order-detail.service";
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-customer-payment',
@@ -23,7 +24,8 @@ export class CustomerPaymentComponent implements OnInit {
   constructor(private orderService: OrderService,
               private tokenService: TokenService,
               private userService: UserService,
-              private orderDetailService: OrderDetailService
+              private orderDetailService: OrderDetailService,
+              private router: Router
   ) {
     this.userId = this.tokenService.getUserId()
     console.log(this.userId);
@@ -47,9 +49,10 @@ this.orderDetailService.updateOrderDetail(orderDetail).subscribe()
   }
 
   payment() {
-    this.orderService.payment(this.orderId).subscribe(() =>
-    alert("Đặt hàng thành công, hãy chờ")
-    )
+    this.orderService.payment(this.orderId).subscribe(() => {
+      alert("Đặt hàng thành công, hãy chờ")
+      this.router.navigate(["/customer-order-list"])
+    })
   }
 }
 

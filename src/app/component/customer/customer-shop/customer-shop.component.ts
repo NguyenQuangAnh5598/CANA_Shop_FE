@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product} from "../../../model/Product";
 import {ProductService} from "../../../service/product.service";
 
@@ -9,16 +9,41 @@ import {ProductService} from "../../../service/product.service";
 })
 export class CustomerShopComponent implements OnInit {
   productList: Product[] = [];
+page: any;
 
+  count: any;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.showAllProduct();
+    // this.showAllProduct();
+    this.showAllProductByPage2()
   }
 
-  private showAllProduct(): void {
+   showAllProduct(): void {
     this.productService.findAll().subscribe( productList => {
       this.productList = productList;
     });
+  }
+
+  showAllProductByPage(pageNum: string): void {
+    this.productService.showAllProductByPage(pageNum).subscribe( data => {
+      this.productList = data.content
+      this.page = data
+      this.count = parseInt(String(data.number / 3))*3
+    })
+  }
+
+  showAllProductByPage2(s?: any) {
+    let pageNum;
+    if (s != null) {
+      pageNum = '?page=' + s;
+    }else {
+      pageNum = '';
+    }
+    this.productService.showAllProductByPage(pageNum).subscribe( data => {
+      this.productList = data.content
+      this.page = data
+      this.count = parseInt(String(data.number / 3))*3
+    })
   }
 }

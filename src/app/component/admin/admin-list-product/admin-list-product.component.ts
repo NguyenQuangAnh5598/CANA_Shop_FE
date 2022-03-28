@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ProductService} from "../../../service/product.service";
 import {Product} from "../../../model/Product";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-admin-list-product',
@@ -15,6 +17,7 @@ export class AdminListProductComponent implements OnInit {
   ngOnInit(): void {
     this.findProductList();
   }
+
   findProductList(): void{
     this.productService.findAll().subscribe(productList=>{
       this.productList = productList;

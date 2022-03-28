@@ -1,4 +1,3 @@
-
 <!-- Checkout Start -->
 <form #f="ngForm" (ngSubmit)="f.form.valid && createNewProduct()">
 <div class="container-fluid pt-5">
@@ -37,8 +36,18 @@
             <label>Description</label>
             <input [(ngModel)]="form.description" [ngModelOptions]="{standalone: true}" matInput name = "description" class="form-control" type="text" placeholder="123 Street">
           </div>
+<!-- category-->
+            <label>Category</label>
+            <select [(ngModel)]="form.category" name="category" required style="width: 200px; height: 30px">
+              <option *ngFor="let category of categoryList" [value]="category.id" >
+                {{category.categoryName}}
+              </option>
+            </select>
 
-<!--          image    -->
+
+
+
+          <!--          image    -->
           <div class="col-md-6 form-group">
             <label>Image</label>
             <input type="text" hidden matInput name="image" class="form-control" type="text" placeholder="123 Street">
