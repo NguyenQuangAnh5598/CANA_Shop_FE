@@ -1,21 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductEditComponent } from './product-edit.component';
+import { AdminUpdateUserComponent } from './admin-update-user.component';
 
-describe('ProductEditComponent', () => {
-  let component: ProductEditComponent;
-  let fixture: ComponentFixture<ProductEditComponent>;
+describe('AdminUpdateUserComponent', () => {
+  let component: AdminUpdateUserComponent;
+  let fixture: ComponentFixture<AdminUpdateUserComponent>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductEditComponent ]
+      declarations: [ AdminUpdateUserComponent ]
     })
     .compileComponents();
   });
+
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductEditComponent);
+    fixture = TestBed.createComponent(AdminUpdateUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

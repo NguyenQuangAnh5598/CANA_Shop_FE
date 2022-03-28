@@ -26,4 +26,7 @@ export class UserService {
   findAll(): Observable<User[]> {
     return this.http.get<User[]>(API_LOCAL + 'user');
   }
+  updateUser(user:User):Observable<User>{
+    return this.http.put<User>(API_LOCAL+'user',user);
+  }
 }
