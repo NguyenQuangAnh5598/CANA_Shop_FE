@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserService} from "../../../service/user.service";
 import firebase from "firebase/compat";
 import { User } from 'src/app/model/User';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -11,7 +12,7 @@ import { User } from 'src/app/model/User';
 })
 export class AdminListUserComponent implements OnInit {
  userList: User[] = [];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.findUserList();
@@ -20,5 +21,9 @@ export class AdminListUserComponent implements OnInit {
     this.userService.findAll().subscribe(userList=>{
       this.userList = userList;
     });
+  }
+
+  updateUser(id: number) {
+    this.router.navigate(['admin-update-user',id]);
   }
 }
