@@ -38,7 +38,7 @@ const routes: Routes = [
   {path: 'admin-list-product', component: AdminListProductComponent},
   {path: 'admin-list-user', component: AdminListUserComponent},
   {path: 'admin-update-user/:id', component: AdminUpdateUserComponent},
-  {path: 'customer-profile/:id', component: CustomerProfileComponent},
+  {path: 'customer-profile', component: CustomerProfileComponent},
 ];
 
 @NgModule({
