@@ -37,10 +37,12 @@
             <input [(ngModel)]="form.description" [ngModelOptions]="{standalone: true}" matInput name = "description" class="form-control" type="text" placeholder="123 Street">
           </div>
 <!-- category-->
-<!--          <mat-select>-->
-<!--            <mat-option>None</mat-option>-->
-<!--            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>-->
-<!--          </mat-select>-->
+            <label>Category</label>
+            <select [(ngModel)]="form.category" name="category" required style="width: 200px; height: 30px">
+              <option *ngFor="let category of categoryList" [value]="category.id" >
+                {{category.categoryName}}
+              </option>
+            </select>
 
 
 

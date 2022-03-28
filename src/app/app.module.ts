@@ -36,6 +36,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import { AdminCheckOrderComponent } from './component/admin/admin-check-order/admin-check-order.component';
 import { AdminCheckCompletedOrderComponent } from './component/admin/admin-check-completed-order/admin-check-completed-order.component';
 import {MatSelectModule} from "@angular/material/select";
+import {MatCardModule} from "@angular/material/card";
 
 
 
@@ -63,22 +64,24 @@ import {MatSelectModule} from "@angular/material/select";
     AdminCheckCompletedOrderComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        RouterModule,
-        AngularFireStorageModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        FormsModule,
-        HttpClientModule,
-        MatFormFieldModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        MatTableModule,
-        MatPaginatorModule,
-        MatSelectModule,
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    AngularFireStorageModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    FormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatCardModule,
+
+  ],
   providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })
